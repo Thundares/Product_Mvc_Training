@@ -28,3 +28,4 @@
 /home/rafael/Documents/c#/training/MVC_test/obj/Debug/netcoreapp2.2/MVC_test.dll
 /home/rafael/Documents/c#/training/MVC_test/obj/Debug/netcoreapp2.2/MVC_test.pdb
 /home/rafael/Documents/c#/training/MVC_test/obj/Debug/netcoreapp2.2/MVC_test.csproj.CopyComplete
+/home/rafael/Documents/c#/training/MVC_test/obj/Debug/netcoreapp2.2/Razor/Views/Produtos/Index.g.cshtml.cs
