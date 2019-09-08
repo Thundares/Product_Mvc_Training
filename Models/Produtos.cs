@@ -2,10 +2,10 @@ namespace MVC_test.Models
 {
     public class Produtos
     {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public Tipos tipo { get; set; }
-        public double preco { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public Tipos Tipo { get; set; }
+        public double Preco { get; set; }
 
         public Produtos()
         {
@@ -14,10 +14,10 @@ namespace MVC_test.Models
 
         public Produtos(int id, string n, Tipos t, double p)
         {
-            this.id = id;
-            nome = n;
-            tipo = t;
-            preco = p;
+            Id = id;
+            Nome = n;
+            Tipo = t;
+            Preco = p;
         }
     }
 }

@@ -19,6 +19,8 @@ namespace MVC_test.Models
 
         public DbSet<Produtos> Products {get; set;}
 
+        public DbSet<Armazem> Armazems {get; set;}
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

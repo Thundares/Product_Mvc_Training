@@ -3,14 +3,16 @@ using System;
 using MVC_test.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVC_test.Migrations
 {
     [DbContext(typeof(BancotesteContext))]
-    partial class BancotesteContextModelSnapshot : ModelSnapshot
+    [Migration("20190908214856_Second")]
+    partial class Second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
