@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using MVC_test.Models;
 using MVC_test.Data;
+using MVC_test.Services;
 
 namespace MVC_test
 {
@@ -42,6 +43,7 @@ namespace MVC_test
                 builder => builder.MigrationsAssembly("MVC_test")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<ProdutosService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
