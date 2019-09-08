@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using MVC_test.Models;
 
 
 namespace MVC_test
@@ -35,6 +37,9 @@ namespace MVC_test
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
+            services.AddDbContext<BancotesteContext>(options => 
+                options.UseMySql(Configuration.GetConnectionString("BancotesteContext"), 
+                builder => builder.MigrationsAssembly("MVC_test")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

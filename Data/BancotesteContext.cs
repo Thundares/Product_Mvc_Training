@@ -17,11 +17,13 @@ namespace MVC_test.Models
         {
         }
 
+        public DbSet<Produtos> Products {get; set;}
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;database=bancoteste;uid=Developer;password=123456789");
+                optionsBuilder.UseMySql("Server=localhost;Database=novodb;Uid=Developer;Pwd=123456789;");
             }
         }
 

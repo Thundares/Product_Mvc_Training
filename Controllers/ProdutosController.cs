@@ -11,8 +11,6 @@ namespace MVC_test.Controllers
 {
     public class ProdutosController : Controller
     {
-        private readonly BancotesteContext _contexto;
-
          public ProdutosController()
         {
         }
