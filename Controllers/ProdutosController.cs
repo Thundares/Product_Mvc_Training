@@ -22,5 +22,44 @@ namespace MVC_test.Controllers
             var list = _ps.FindAll();
             return View(list);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Produtos obj)
+        {
+            _ps.Insert(obj);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete(int? a)
+        {
+            if(a == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _ps.FindById(a.Value);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        [
+            HttpPost
+        ]
+        [ValidateAntiForgeryTokenAttribute]
+        public IActionResult Delete(int Id)
+        {
+            _ps.Remove(Id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

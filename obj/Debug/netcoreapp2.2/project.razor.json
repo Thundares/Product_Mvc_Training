@@ -2976,8 +2976,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Produtos/Create.cshtml",
+      "TargetPath": "Views/Produtos/Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Home/Privacy.cshtml",
       "TargetPath": "Views/Home/Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Produtos/Delete.cshtml",
+      "TargetPath": "Views/Produtos/Delete.cshtml",
       "FileKind": "mvc"
     },
     {

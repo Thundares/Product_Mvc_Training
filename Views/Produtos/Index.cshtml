@@ -5,7 +5,12 @@
 
 <div class="text-center">
     <h1 class="display-4">Página de Produtos</h1>
-    <p>Mostrando os produtos de nosso DataBase</a>.</p>
+    <p>Mostrando os produtos de nosso DataBase.</p>
+
+    <p>
+        <a asp-action="Create" class="btn btn-dark">Novo_Produto</a>
+        Teste
+    </p>
 
     <table class="table table-striped table-hover">
         <thead>
@@ -39,6 +44,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelp => item.Preco)
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-a="@item.Id">Deletar</a>
                     </td>
                 </tr>
             }

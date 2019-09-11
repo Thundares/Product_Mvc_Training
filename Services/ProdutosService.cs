@@ -12,9 +12,27 @@ namespace MVC_test.Services
             _context = c;
         }
 
+        public Produtos FindById(int id)
+        {
+            return _context.Products.FirstOrDefault(x => x.Id == id);
+        }
+
         public List<Produtos> FindAll()
         {
             return _context.Products.ToList();
+        }
+
+        public void Insert(Produtos obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
+
+        public void Remove(int id)
+        {
+            var obj = _context.Products.Find(id);
+            _context.Products.Remove(obj);
+            _context.SaveChanges();
         }
     }
 }
