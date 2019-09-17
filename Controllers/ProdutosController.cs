@@ -17,9 +17,9 @@ namespace MVC_test.Controllers
             _ps = p;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var list = _ps.FindAll();
+            var list = await _ps.FindAllAsync();
             return View(list);
         }
 
@@ -30,20 +30,20 @@ namespace MVC_test.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Produtos obj)
+        public async Task<IActionResult> Create(Produtos obj)
         {
-            _ps.Insert(obj);
+            await _ps.InsertAsync(obj);
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Delete(int? a)
+        public async Task<IActionResult> Delete(int? a)
         {
             if(a == null)
             {
                 return NotFound();
             }
 
-            var obj = _ps.FindById(a.Value);
+            var obj = await _ps.FindByIdAsync(a.Value);
             if(obj == null)
             {
                 return NotFound();
@@ -56,9 +56,9 @@ namespace MVC_test.Controllers
             HttpPost
         ]
         [ValidateAntiForgeryTokenAttribute]
-        public IActionResult Delete(int Id)
+        public async Task<IActionResult> Delete(int Id)
         {
-            _ps.Remove(Id);
+            await _ps.RemoveAsync(Id);
             return RedirectToAction(nameof(Index));
         }
     }

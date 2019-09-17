@@ -1,6 +1,8 @@
 using MVC_test.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace MVC_test.Services
 {
@@ -12,27 +14,27 @@ namespace MVC_test.Services
             _context = c;
         }
 
-        public Produtos FindById(int id)
+        public async Task<Produtos> FindByIdAsync(int id)
         {
-            return _context.Products.FirstOrDefault(x => x.Id == id);
+            return await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public List<Produtos> FindAll()
+        public async Task<List<Produtos>> FindAllAsync()
         {
-            return _context.Products.ToList();
+            return await _context.Products.ToListAsync();
         }
 
-        public void Insert(Produtos obj)
+        public async Task InsertAsync(Produtos obj)
         {
             _context.Add(obj);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Remove(int id)
+        public async Task RemoveAsync(int id)
         {
             var obj = _context.Products.Find(id);
             _context.Products.Remove(obj);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }
